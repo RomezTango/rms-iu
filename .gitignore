@@ -8,8 +8,6 @@
 dist/
 build/
 
-# 📝 Log di deploy (solo se NON vuoi tenerli tutti su Git)
-logs/
 
 # ⚙️ Config locale di VS Code (non necessaria nel repo)
 .vscode/

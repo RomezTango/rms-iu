@@ -1,0 +1,4 @@
+----------------------------------------- 
+[2025-05-05_18-14] 
+ 
+Commit: commit verifica salvataggio file 
