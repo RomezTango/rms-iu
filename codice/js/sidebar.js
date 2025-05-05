@@ -1,29 +1,11 @@
 /* =========================================================
-   📚 Come aggiungere una voce o un gruppo nel menu
-
-   📌 VOCE SINGOLA (senza sottomenù):
-   {
-     titolo: "🏠 Nome Voce",    // Titolo del bottone visibile
-     pagina: "nome-pagina"      // Nome della pagina che caricherà (senza .html)
-   },
-
-   📌 VOCE CON SOTTOMENU (menu a tendina):
-   {
-     titolo: "🧑‍🤝‍🧑 Nome Gruppo",  // Titolo principale con freccina ▶
-     sottosezioni: [
-       { nome: "🔹 Nome Sottovoce 1", pagina: "nome-pagina-1" },  // Prima sottovoce
-       { nome: "🔹 Nome Sottovoce 2", pagina: "nome-pagina-2" },  // Seconda sottovoce
-       { nome: "🔹 Nome Sottovoce 3", pagina: "nome-pagina-3" }   // Terza sottovoce (senza virgola finale se ultimo!)
-     ]
-   },
-
-   📢 ATTENZIONE:
-   - Ogni sottosezione è scritta come: { nome: "Nome", pagina: "nomefile" }
-   - Virgola (`,`) obbligatoria tra le sottosezioni, tranne DOPO l'ultima.
-   - "pagina" deve corrispondere al file dentro "Pages/" (esempio: Pages/nome-pagina.html)
-   - Puoi mettere emoji o simboli nel nome per rendere il menù più visibile!
+   🔧 Sidebar dinamica RMS – Versione aggiornata
+   ✅ Include toggle visivo dei sottomenu
+   ✅ Supporta voce singola e gruppi
+   ✅ Compatibile con stile e struttura CSS
 ========================================================= */
 
+// 🔠 Dati menu
 const menuData = [
   {
     titolo: "🏠 Dashboard",
@@ -51,14 +33,13 @@ const menuData = [
     sottosezioni: [
       { nome: "📝 Prima Nota", pagina: "Prima-nota" },
       { nome: "📊 Bilancio", pagina: "Bilancio" },
-            { nome: "📈 Bilancio Preventivo", pagina: "bilancio-preventivo" }
+      { nome: "📈 Bilancio Preventivo", pagina: "bilancio-preventivo" }
     ]
   },
   {
     titolo: "🎫 Tessere ACSI",
     pagina: "tessere"
   },
-  
   {
     titolo: "⚙️ Personalizzazione",
     sottosezioni: [
@@ -70,7 +51,6 @@ const menuData = [
       { nome: "🎫 Inserimento Tessere", pagina: "inserimento-tessere" }
     ]
   },
-
   {
     titolo: "📘 Guida",
     pagina: "guida"
@@ -81,12 +61,13 @@ const menuData = [
   }
 ];
 
-// Inietta la sidebar
+// 🔁 Crea dinamicamente la sidebar
 function generaSidebar() {
   const sidebar = document.getElementById('sidebar');
-  sidebar.innerHTML = ''; // Pulisce eventuale contenuto
+  sidebar.innerHTML = ''; // Pulisce contenuto esistente
 
   menuData.forEach(item => {
+    // Se ha sottosezioni → gruppo con toggle
     if (item.sottosezioni) {
       const group = document.createElement('div');
       group.className = 'menu-group';
@@ -94,7 +75,7 @@ function generaSidebar() {
       const mainBtn = document.createElement('button');
       mainBtn.className = 'menu-btn';
       mainBtn.innerHTML = `${item.titolo} <span class="arrow">▶</span>`;
-      mainBtn.onclick = () => toggleSubmenu(mainBtn);
+      mainBtn.onclick = () => toggleSubmenu(mainBtn); // Toggle su clic
 
       const submenu = document.createElement('div');
       submenu.className = 'submenu';
@@ -102,7 +83,7 @@ function generaSidebar() {
       item.sottosezioni.forEach(sub => {
         const subBtn = document.createElement('button');
         subBtn.textContent = sub.nome;
-        subBtn.onclick = () => caricaPagina(sub.pagina);
+        subBtn.onclick = () => caricaPagina(sub.pagina); // Carica pagina
         submenu.appendChild(subBtn);
       });
 
@@ -110,6 +91,7 @@ function generaSidebar() {
       group.appendChild(submenu);
       sidebar.appendChild(group);
     } else {
+      // Voce singola
       const btn = document.createElement('button');
       btn.className = 'menu-btn';
       btn.textContent = item.titolo;
@@ -119,17 +101,17 @@ function generaSidebar() {
   });
 }
 
-// Espandi o chiudi il submenu
+// ⏬ Espande o chiude il gruppo del sottomenu
 function toggleSubmenu(button) {
-  const submenu = button.nextElementSibling;
-  submenu.classList.toggle('open');
+  const group = button.parentElement; // Prende il contenitore padre
+  group.classList.toggle('open');     // Aggiunge o rimuove la classe .open
 
-  // Toggle freccina
+  // 🔁 Cambia la freccina ▶ / ▼
   const arrow = button.querySelector('.arrow');
-  arrow.textContent = submenu.classList.contains('open') ? '▼' : '▶';
+  arrow.textContent = group.classList.contains('open') ? '▼' : '▶';
 }
 
-// Avvio
+// 🚀 Esecuzione automatica all'avvio
 document.addEventListener('DOMContentLoaded', () => {
   generaSidebar();
 });
