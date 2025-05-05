@@ -3,3 +3,36 @@
 Push riuscito. 
 ----------------------------------------- 
 [2025-05-05_17-17] Commit: comit di prova  
+Push riuscito. 
+[32mDeploy path: [39mH:\Il mio Drive\RMS\RMS_UI
+Deploying to main site URL...
+​
+Netlify Build                                                 
+────────────────────────────────────────────────────────────────
+​
+❯ Version
+  @netlify/build 32.1.0
+​
+❯ Flags
+  build: false
+  deployId: 6818d69752ef890545961870
+  dir: .
+  open: false
+  prod: true
+  prodIfUnlocked: false
+  skipFunctionsCache: false
+​
+❯ Current directory
+  H:\Il mio Drive\RMS\RMS_UI
+​
+❯ Config file
+  No config file was defined: using default values.
+​
+❯ Context
+  dev
+
+[32mBuild logs: [39m        https://app.netlify.com/sites/r-member-system-app/deploys/6818d69752ef890545961870
+[32mFunction logs: [39m     https://app.netlify.com/sites/r-member-system-app/logs/functions
+[32mEdge function Logs: [39mhttps://app.netlify.com/sites/r-member-system-app/logs/edge-functions
+[32mUnique deploy URL: [39m https://6818d69752ef890545961870--r-member-system-app.netlify.app
+[32mWebsite URL: [39m       https://r-member-system-app.netlify.app
