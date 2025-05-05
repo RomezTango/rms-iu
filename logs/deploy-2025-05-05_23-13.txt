@@ -2,3 +2,17 @@
 [2025-05-05_23-13] 
  
 Commit: primo tentatico con quoteassociative  
+Push riuscito. 
+ 
+File modificati: 
+codice/css/quote-associative.css
+codice/js/quote-associative.js
+codice/js/sidebar.js
+codice/pages/quote-associative.html
+logs/deploy-2025-05-05_21-52.txt
+logs/deploy-2025-05-05_23-13.txt
+ 
+Eseguo il deploy su Netlify... 
+ 
+Sito online: https://r-member-system-app.netlify.app 
+----------------------------------------- 
