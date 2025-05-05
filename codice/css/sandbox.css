@@ -1,0 +1,193 @@
+/* ------------------------------
+   STRUTTURA BASE
+--------------------------------- */
+body {
+    font-family: "Segoe UI", sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.4;
+    max-width: 900px;
+    margin: auto;
+    padding: 0;
+  }
+  
+  /* ------------------------------
+     TITOLI: H1, H2, H3
+  --------------------------------- */
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    margin-top: 0;
+    color: #2c3e50;
+    line-height: 1.2;
+  }
+  
+  h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 0;
+    color: #2c3e50;
+    line-height: 1.3;
+  }
+  
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    margin-top: 0;
+    color: #2c3e50;
+    line-height: 1.4;
+  }
+  
+ /* ------------------------------
+   SEZIONE (contenitore logico in rilievo)
+--------------------------------- */
+.sezione {
+    margin: 30px 0;
+    padding: 20px;
+    background: #ffffff; /* Sfondo chiaro necessario per l’effetto */
+    border-radius: 12px;
+  
+    /* 💡 Ombre esterne per creare rilievo */
+    box-shadow:
+      -4px -4px 8px rgba(255, 255, 255, 0.6),  /* luce top-left */
+       4px 4px 8px rgba(0, 0, 0, 0.1);         /* ombra bottom-right */
+  
+    /* 🔄 transizione fluida per effetti dinamici futuri */
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  
+  
+  /* ------------------------------
+     CAMPO (label + input)
+  --------------------------------- */
+  .campo {
+    margin-bottom: 8px;        /* Spazio tra un campo e il successivo */
+  }
+  
+  /* ------------------------------
+     LABEL (etichetta sopra input)
+  --------------------------------- */
+  label {
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 2px;        /* Spazio fra label e input */
+    color: #333;
+  }
+   /* ------------------------------
+    INPUT PER LOGHIE E IMMAGINI 
+  --------------------------------- */
+  .logo-upload-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .logo-upload-row .campo img {
+    max-width: 100px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+  }
+  
+
+  /* ------------------------------
+     INPUT STANDARD
+  --------------------------------- */
+  input {
+    width: 100%;
+    padding: 4px 8px;          /* 👈 Input più compatto */
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: 0;                 /* ✅ Nessuno spazio extra */
+    transition: border-color 0.3s;
+  }
+  
+  input:focus {
+    border-color: #e74c3c; /* 🔴 Rosso RomaTango */
+    outline: none;
+  
+    /* ✨ Ombra direzionata rossa + rilievo */
+    box-shadow:
+      -2px -2px 4px rgba(255, 255, 255, 0.4),  /* luce in alto a sinistra */
+       2px  2px 6px rgba(231, 76, 60, 0.3);    /* ombra rossa in basso a destra */
+      
+    transition: box-shadow 0.3s ease, border-color 0.2s ease;
+  }
+  
+  
+  input::selection {
+    background: #cce4ff;
+    color: #000;
+  }
+  
+  /* ------------------------------
+     INPUT SPECIALI
+  --------------------------------- */
+  input[type="color"] {
+    padding: 0;
+    height: 36px;
+  }
+  
+  /* ------------------------------
+     READONLY
+  --------------------------------- */
+  .readonly {
+    background-color: #eee;
+    color: #666;
+  }
+  
+  /* ------------------------------
+     BOTTONI
+  --------------------------------- */
+  button {
+    margin-top: 20px;
+    margin-right: 10px;
+    padding: 8px 16px;
+    font-size: 15px;
+    background-color: #ffffff; /* 🔄 sfondo bianco per rilievo */
+    color: #e74c3c;            /* testo rosso RomaTango */
+    border: 1px solid #e74c3c; /* bordo coerente col tema */
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow:
+      -2px -2px 4px rgba(255, 255, 255, 0.6),
+       2px  2px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #ffecec;
+    box-shadow:
+      -3px -3px 6px rgba(255, 255, 255, 0.6),
+       3px  3px 8px rgba(231, 76, 60, 0.2);
+  }
+  
+  button:disabled {
+    background-color: #f9f9f9;
+    border-color: #ccc;
+    color: #aaa;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+  
+  /* ------------------------------
+     REPORT MODIFICHE
+  --------------------------------- */
+  pre#risultato {
+    margin-top: 30px;
+    font-size: 14px;
+    background: #ffffff;
+    border-left: 4px solid #e74c3c;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow:
+      -2px -2px 4px rgba(255, 255, 255, 0.6),
+       2px  2px 6px rgba(0, 0, 0, 0.1);
+    white-space: pre-wrap;
+  }

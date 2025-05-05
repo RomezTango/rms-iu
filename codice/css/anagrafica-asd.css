@@ -1,0 +1,124 @@
+.anagrafica-asd {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.anagrafica-asd h2, 
+.anagrafica-asd h3 {
+  color: #2c3e50;
+  margin-top: 30px;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.anagrafica-asd .sezione {
+  margin-bottom: 32px;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: -4px -4px 8px rgba(255, 255, 255, 0.6),
+               4px 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.anagrafica-asd .campo {
+  margin-bottom: 16px;
+}
+
+.anagrafica-asd label {
+  display: block;
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.anagrafica-asd .logo-upload-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.anagrafica-asd .logo-upload-row .campo img {
+  max-width: 100px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+}
+
+.anagrafica-asd input {
+  width: 100%;
+  max-width: 600px;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.anagrafica-asd input:focus {
+  border-color: #e74c3c;
+  box-shadow: 0 0 5px rgba(231, 76, 60, 0.4);
+  outline: none;
+}
+
+.anagrafica-asd input::selection {
+  background: #cce4ff;
+  color: #000;
+}
+
+.anagrafica-asd input[type="color"] {
+  padding: 0;
+  height: 36px;
+}
+
+.anagrafica-asd .readonly {
+  background-color: #eee;
+  color: #666;
+}
+
+.anagrafica-asd button {
+  padding: 10px 20px;
+  font-size: 15px;
+  margin-top: 20px;
+  background-color: #ffffff;
+  color: #e74c3c;
+  border: 1px solid #e74c3c;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: -2px -2px 4px rgba(255, 255, 255, 0.6),
+               2px  2px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.anagrafica-asd button:hover {
+  background-color: #ffecec;
+  box-shadow: -3px -3px 6px rgba(255, 255, 255, 0.6),
+               3px  3px 8px rgba(231, 76, 60, 0.2);
+}
+
+.anagrafica-asd button:disabled {
+  background-color: #f9f9f9;
+  border-color: #ccc;
+  color: #aaa;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.anagrafica-asd pre#risultato {
+  margin-top: 30px;
+  font-size: 14px;
+  background: #ffffff;
+  border-left: 4px solid #e74c3c;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: -2px -2px 4px rgba(255, 255, 255, 0.6),
+               2px  2px 6px rgba(0, 0, 0, 0.1);
+  white-space: pre-wrap;
+}

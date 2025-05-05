@@ -1,0 +1,325 @@
+/* ------------------------------
+   RESET E BASE
+--------------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* ------------------------------
+   CONTENITORE GENERALE
+--------------------------------- */
+.contenitore-generale {
+  width: 75%;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ------------------------------
+   WRAPPER = SIDEBAR + MAIN
+--------------------------------- */
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  align-items: stretch;
+}
+
+/* ------------------------------
+   SIDEBAR DESKTOP
+--------------------------------- */
+#sidebar.sidebar-menu {
+  width: 220px;
+  min-width: 220px;
+  background-color: #f0f0f0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* ------------------------------
+   MENU E SOTTOMENU
+--------------------------------- */
+.menu-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #f0f0f0;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.menu-btn:hover {
+  background-color: #d32f2f;
+  color: #fff;
+}
+
+.menu-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 👇 SUBMENU CHIUSO inizialmente */
+.menu-group .submenu {
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 16px;
+
+  max-height: 0;            /* Chiuso */
+  overflow: hidden;         /* Nascosto */
+  transition: max-height 0.3s ease; /* Smooth */
+}
+
+/* 👇 SUBMENU APERTO */
+.menu-group.open .submenu {
+  max-height: 500px; /* abbastanza grande per far uscire tutti i bottoni */
+}
+
+/* 👇 Bottoni dentro il submenu */
+.menu-group .submenu button {
+  background-color: #fff;
+  font-size: 13px;
+  text-align: left;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.menu-group .submenu button:hover {
+  background-color: #f2f2f2;
+}
+
+/* 👇 Freccina destra-giù */
+.menu-btn .arrow {
+  margin-left: auto;
+  font-size: 12px;
+  transition: transform 0.5s;
+}
+
+.menu-group.open .arrow {
+  transform: rotate(90deg);
+}
+
+
+/* ------------------------------
+   MAIN AREA
+--------------------------------- */
+#main {
+  flex: 1;
+  padding: 20px;
+  background: #fff;
+}
+
+/* ------------------------------
+   TOPBAR
+--------------------------------- */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.1); /* 🔴 sfondo x debug */
+  }
+  .logo-e-dati {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px; /* spazio tra logo e testo */
+  }
+
+.logo img {
+  max-height: 80px;
+}
+
+/* ------------------------------
+   HEADER DATI ASSOCIAZIONE
+--------------------------------- */
+
+.header-dati-associazione {
+  background-color: #fff; /* sfondo per debug */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 10px;       /* 👉 distanza dal logo */
+  margin-right: 10px;
+  line-height: 1.2;        /* 👉 interlinea compatta */
+ 
+}
+
+#nome-associazione {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 2px;      /* 👉 riduciamo spazio tra righe */
+}
+
+#indirizzo-associazione,
+#piva-associazione {
+  font-size: 14px;
+  font-weight: normal;
+  color: #555;
+  margin: 0;
+  padding: 0;
+}
+
+
+#datetime {
+  font-size: 14px;
+  color: #555;
+  margin-top: 8px;
+  align-self: flex-end;
+}
+
+.topbar-divider {
+  width: 100%;
+  height: 3px;
+  background-color: #d32f2f;
+  margin-bottom: 10px;
+}
+
+/* ------------------------------
+   FOOTER
+--------------------------------- */
+.footer {
+  background-color: #f4f4f4;
+  padding: 10px 20px;
+  font-size: 12px;
+  color: #333;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.logo-footer {
+  height: 24px;
+  margin: 0;
+}
+
+
+/* ------------------------------
+   HAMBURGER (mobile)
+--------------------------------- */
+#hamburger {
+  display: none;
+}
+
+/* ------------------------------
+   RESPONSIVE (MOBILE)
+--------------------------------- */
+@media (max-width: 768px) {
+  .contenitore-generale {
+    width: 100%;
+    margin: 0;
+  }
+
+  .header-dati-associazione {
+    font-size: 10px;
+    line-height: 1;
+  }
+
+  #nome-associazione {
+    font-size: 12px;
+  }
+
+  #indirizzo-associazione,
+  #piva-associazione {
+    font-size: 10px;
+  }
+
+  .wrapper {
+    flex-direction: column;
+  }
+
+  #sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;
+    background-color: #eee;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  #sidebar.active {
+    transform: translateX(0);
+  }
+
+  #hamburger {
+    display: flex;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    z-index: 1100;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hamburger-lines {
+    width: 28px;
+    height: 3px;
+    background-color: #333;
+    position: relative;
+    border-radius: 2px;
+  }
+
+  .hamburger-lines::before,
+  .hamburger-lines::after {
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    left: 0;
+  }
+
+  .hamburger-lines::before {
+    top: -8px;
+  }
+
+  .hamburger-lines::after {
+    top: 8px;
+  }
+
+  .logo img {
+    max-height: 50px;
+  }
+
+  #datetime {
+    font-size: 13px;
+    padding-top: 8px;
+  }
+
+  .footer {
+    padding: 10px;
+    font-size: 12px;
+  }
+} /* 👈 qui chiudiamo correttamente la media query */  

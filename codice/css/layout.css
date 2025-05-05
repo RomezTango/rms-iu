@@ -1,0 +1,64 @@
+/* =======================
+   layout.css – Layout principale RMS
+   ======================= */
+
+/* === WRAPPER GLOBALE === */
+.wrapper {
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  min-height: 100vh;
+  background-color: yellow;
+  box-shadow: none;
+  border: none;
+}
+
+/* === SIDEBAR (desktop e default) === */
+#sidebar {
+  all: unset;
+  position: relative;
+  width: 250px;
+  height: 100vh;
+  background-color: #eee;
+  overflow-y: auto;
+  flex-shrink: 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+/* === MAIN (contenuto accanto alla sidebar) === */
+#main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 40px 24px;
+  background-color: transparent;
+}
+
+/* === CONTENUTO INTERNO CENTRATO === */
+.main-content {
+  width: 100%;
+  max-width: 960px;
+  padding: 24px;
+  background-color: #fff;
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow:
+    0 -2px 4px rgba(0, 0, 0, 0.1),
+    -2px 2px 4px rgba(0, 0, 0, 0.05),
+    2px 2px 4px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+/* === RESET SIDEBAR SU DESKTOP (per annullare fixed mobile) === */
+@media (min-width: 769px) {
+  #sidebar {
+    position: relative !important;
+    left: auto !important;
+    display: block !important;
+    width: 250px;
+    height: 100vh;
+    background-color: #eee;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  }
+}

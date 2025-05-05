@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Dati da Google Sheet</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    td, th {
+      border: 1px solid #aaa;
+      padding: 8px;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+  </style>
+</head>
+<body>
+  <h2>📄 Dati da Google Sheet</h2>
+  <div id="output">⏳ Caricamento dati...</div>
+
+  <script>
+    fetch("https://script.google.com/macros/s/AKfycbzQTF83hQlB69kYuyN5VRWi_nh-kqjgKzwO8Yj-m5AdfrMZJONRb4IXOxKm6ThD34ExGw/exec")
+      .then(response => response.json())
+      .then(data => {
+        const table = document.createElement("table");
+
+        data.forEach((row, rowIndex) => {
+          const tr = document.createElement("tr");
+          row.forEach(cell => {
+            const cellElement = document.createElement(rowIndex === 0 ? "th" : "td");
+            cellElement.textContent = cell;
+            tr.appendChild(cellElement);
+          });
+          table.appendChild(tr);
+        });
+
+        const output = document.getElementById("output");
+        output.innerHTML = ""; // Pulisce "Caricamento dati..."
+        output.appendChild(table);
+      })
+      .catch(error => {
+        document.getElementById("output").textContent = "Errore nel caricamento: " + error;
+        console.error("Errore fetch:", error);
+      });
+  </script>
+</body>
+</html>

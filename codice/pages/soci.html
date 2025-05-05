@@ -1,0 +1,90 @@
+<div class="sezione-pagina">
+  <h2>Gestione Soci 🧑‍🤝‍🧑</h2>
+  <hr>
+
+  <!-- 🔹 Selezione socio -->
+  <p><label for="selettore-socio">Qui potrai modificare i dati del socio</label></p>
+  <p>
+    <label for="selettore-socio">🔍 Seleziona socio:</label>
+    <select id="selettore-socio">
+      <option value="">-- Seleziona un socio --</option>
+      <!-- Opzioni dinamiche JS -->
+    </select>
+  </p>
+
+  <!-- 🔹 Dati modificabili -->
+  <div id="dati-socio" style="display:none;">
+    <h3>Dati socio</h3>
+    <p>
+      <input type="text" id="nome" placeholder="Nome">
+      <input type="text" id="cognome" placeholder="Cognome">
+      <input type="text" id="luogoNascita" placeholder="Luogo di nascita">
+      <input type="date" id="dataNascita">
+      <input type="text" id="residenza" placeholder="Residenza">
+      <input type="email" id="email" disabled placeholder="Email (non modificabile)">
+      <button onclick="salvaDatiSocio()">💾 Salva modifiche</button>
+    </p>
+  </div>
+
+  <hr>
+
+  <!-- 🔹 Ricerca per sede -->
+  <p><label for="selettore-sede">Qui trovi un report filtrato per sede</label></p>
+  <p>
+    <label for="selettore-sede">📍 Filtra per sede:</label>
+    <select id="selettore-sede">
+      <option value="">-- Seleziona una sede --</option>
+      <!-- Opzioni da configurazione -->
+    </select>
+    &nbsp; - &nbsp;
+    <button onclick="visualizzaSociSede()">📝 Visualizza</button>
+    &nbsp; - &nbsp;
+    <button onclick="scaricaPdfSede()">📄 Scarica PDF</button>
+  </p>
+
+  <div id="lista-soci-sede"></div>
+
+  <hr>
+
+  <!-- 🔹 Ricerca per pagamenti -->
+  <p>
+    <label for="filtro-pagamenti">💰 Filtra per stato pagamento:</label>
+    <select id="filtro-pagamenti">
+      <option value="tutti">Tutte le posizioni</option>
+      <option value="pagato">Pagato</option>
+      <option value="non_pagato">Non pagato</option>
+    </select>
+
+    <label for="data-da">📅 Da:</label>
+    <input type="date" id="data-da">
+
+    <label for="data-a">A:</label>
+    <input type="date" id="data-a">
+  </p>
+
+  <div id="lista-soci-pagamenti">
+    <button onclick="visualizzaSociPagamento()">📝 Visualizza Lista</button>
+    &nbsp; - &nbsp;
+    <button onclick="scaricaPdfPagamenti()">📄 Scarica PDF</button>
+  </div>
+
+  <hr>
+
+  <!-- 🔹 Libro soci -->
+  <p style="text-align:center;">
+    <button onclick="generaLibroSoci()">📘 Libro Soci</button>
+  </p>
+
+  <div style="text-align:center;" id="libro-soci">
+    <button onclick="visualizzaLibroSoci()">📝 Visualizza Libro Soci</button>
+    &nbsp; - &nbsp;
+    <button onclick="scaricaPdfLibro()">📄 Scarica PDF Libro Soci</button>
+  </div>
+
+  <hr>
+
+  <!-- 🔹 Tasto home -->
+  <p style="text-align:center;">
+    <button onclick="caricaPagina('dashboard')">🏠 Torna alla Home</button>
+  </p>
+</div>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestione Anagrafica Associazione</title>
+  <link rel="stylesheet" href="codice/css/sandbox.css">
+</head>
+<body>
+
+<h2>📋 Anagrafica Associazione</h2>
+
+<div class="sezione">
+  <h3>🧾 Dati principali</h3>
+  <div class="campo">
+    <label for="nome-associazione">Nome Associazione</label>
+    <input id="nome-associazione" class="readonly" readonly type="text">
+  </div>
+  <div class="campo">
+    <label for="piva">Codice Fiscale / P.IVA</label>
+    <input id="piva" class="readonly" readonly type="text">
+  </div>
+  <div class="campo">
+    <label for="email">Email</label>
+    <input id="email" class="readonly" readonly type="email">
+  </div>
+  <div class="campo">
+    <label for="presidente">Presidente</label>
+    <input id="presidente" type="text">
+  </div>
+  <div class="campo">
+    <label for="indirizzo">Indirizzo</label>
+    <input id="indirizzo" type="text">
+  </div>
+</div>
+
+<div class="sezione">
+  <h3>📞 Contatti</h3>
+  <div class="campo">
+    <label for="telefono">Telefono</label>
+    <input id="telefono" type="text">
+  </div>
+  <div class="campo">
+    <label for="sito-web">Sito Web ufficiale</label>
+    <input id="sito-web" type="text">
+  </div>
+</div>
+
+<div class="sezione">
+  <h3>🏦 Pagamenti</h3>
+  <div class="campo"><label for="iban">IBAN</label><input id="iban" type="text"></div>
+  <div class="campo"><label for="pagamento1">Metodo di pagamento 1</label><input id="pagamento1" type="text"></div>
+  <div class="campo"><label for="pagamento2">Metodo di pagamento 2</label><input id="pagamento2" type="text"></div>
+  <div class="campo"><label for="pagamento3">Metodo di pagamento 3</label><input id="pagamento3" type="text"></div>
+  <div class="campo"><label for="pagamento4">Metodo di pagamento 4</label><input id="pagamento4" type="text"></div>
+  <div class="campo"><label for="pagamento5">Metodo di pagamento 5</label><input id="pagamento5" type="text"></div>
+</div>
+
+<div class="sezione">
+  <h3>📄 PDF & Tessere</h3>
+  <div class="campo"><label for="intestazione-pdf">Testo Intestazione PDF</label><input id="intestazione-pdf" type="text"></div>
+  <div class="campo"><label for="colore-tema">Colore Tema</label><input id="colore-tema" type="color"></div>
+  <div class="campo"><label for="file-ricevuta">Nome file ricevuta PDF</label><input id="file-ricevuta" type="text"></div>
+  <div class="campo"><label for="layout">Layout ricevute/tessere</label><input id="layout" type="text"></div>
+</div>
+
+<div class="sezione">
+  <h3>🖼️ Loghi & Immagini</h3>
+  <div class="campo"><label for="logo1">Logo ID 1</label><input id="logo1" type="text"></div>
+  <div class="campo logo-upload-row">
+    <div>
+      <label for="upload-logo">Carica nuovo logo (ID_LOGO_ASS)</label>
+      <input type="file" id="upload-logo" accept="image/*">
+      <img id="preview-logo" style="display: none;">
+    </div>
+    <div>
+      <label>Logo attuale</label>
+      <img id="logo-attuale" style="display: none;">
+    </div>
+  </div>
+  
+  
+  <div class="campo"><label for="logo2">Logo ID 2</label><input id="logo2" type="text"></div>
+  <div class="campo"><label for="logo3">Logo ID 3</label><input id="logo3" type="text"></div>
+  <div class="campo"><label for="template-fronte">Template Tessera Fronte</label><input id="template-fronte" type="text"></div>
+  <div class="campo"><label for="template-retro">Template Tessera Retro</label><input id="template-retro" type="text"></div>
+  <div class="campo"><label for="cartella-immagini">Cartella immagini personalizzate</label><input id="cartella-immagini" type="text"></div>
+</div>
+
+<div class="sezione">
+  <h3>🔐 Sicurezza & Organizzazione</h3>
+  <div class="campo"><label for="tipo-licenza">Tipo Licenza</label><input id="tipo-licenza" type="text"></div>
+  <div class="campo"><label for="codice-acsi">Codice affiliazione ACSI</label><input id="codice-acsi" type="text"></div>
+  <div class="campo"><label for="segretaria">Responsabile segreteria</label><input id="segretaria" type="text"></div>
+  <div class="campo"><label for="organigramma">Organigramma</label><input id="organigramma" type="text"></div>
+  <div class="campo"><label for="commento-interno">🧠 Commento interno</label><input id="commento-interno" type="text"></div>
+</div>
+
+<button id="modifica-btn">✏️ Modifica</button>
+<button id="salva-btn" style="display:none;">💾 Salva</button>
+
+<pre id="risultato"></pre>
+
+<script src="codice/js/sandbox.js"></script>
+</body>
+</html>

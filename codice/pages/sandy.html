@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      body { font-family: Arial, sans-serif; padding: 20px; }
+      .preview { margin-top: 20px; }
+    </style>
+  </head>
+  <body>
+    <h2>Carica nuovo logo</h2>
+    <input type="file" id="fileInput" accept="image/*">
+    <div class="preview">
+      <p>Anteprima:</p>
+      <img id="previewImage" src="" alt="Anteprima" style="max-width: 200px; display: none;">
+    </div>
+    <br>
+    <button onclick="uploadLogo()">Carica</button>
+
+    <script>
+      const fileInput = document.getElementById('fileInput');
+      const previewImage = document.getElementById('previewImage');
+
+      fileInput.addEventListener('change', () => {
+        const file = fileInput.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = e => {
+            previewImage.src = e.target.result;
+            previewImage.style.display = 'block';
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      function uploadLogo() {
+        const file = fileInput.files[0];
+        if (!file) {
+          alert('Seleziona un file prima di caricare.');
+          return;
+        }
+        const reader = new FileReader();
+        reader.onload = e => {
+          const data = e.target.result.split(',')[1];
+          google.script.run
+            .withSuccessHandler(() => alert('Logo caricato con successo!'))
+            .uploadLogo(data, file.name, file.type);
+        };
+        reader.readAsDataURL(file);
+      }
+    </script>
+  </body>
+</html>

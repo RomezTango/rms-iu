@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RomezTango RMS</title>
+
+  <!-- ✅ Stile principale -->
+  <link rel="stylesheet" href="codice/css/style.css" />
+</head>
+<body>
+
+  <!-- 🔲 Contenitore principale -->
+  <div class="contenitore-generale">
+
+    <!-- 🔳 Wrapper = Sidebar + Main -->
+    <div class="wrapper">
+
+      <!-- ⚠️ Sidebar dinamica (JS genera contenuto) -->
+      <div id="sidebar" class="sidebar-menu"></div>
+
+      <!-- 🍔 Hamburger menu per mobile -->
+      <button id="hamburger" onclick="toggleSidebar()">
+        <span class="hamburger-lines"></span>
+      </button>
+
+      <!-- 🔶 Area principale -->
+      <div id="main">
+
+        <!-- 🔝 Topbar (Logo + Dati Associazione + Data) -->
+        <div class="topbar">
+
+          <!-- 🔗 Gruppo LOGO + DATI -->
+          <div class="logo-e-dati">
+
+            <!-- 🖼️ Logo Associazione -->
+            <div class="logo">
+              <img src="media/logo romez.jpg
+            " alt="Logo ASD" />
+            </div>
+
+            <!-- 📇 Dati Associazione -->
+            <div class="header-dati-associazione">
+              <div id="nome-associazione"></div>
+              <div id="indirizzo-associazione"></div>
+              <div id="piva-associazione"></div>
+            </div>
+
+          </div>
+
+          <!-- ⏰ Data corrente -->
+          <div id="datetime"></div>
+        </div>
+
+        <!-- 🔴 Linea rossa divisoria -->
+        <div class="topbar-divider"></div>
+
+        <!-- 📄 Contenuti dinamici -->
+        <div class="main-inner">
+          <div id="contenuto-dinamico"></div>
+        </div>
+
+      </div> <!-- 🔚 Fine Main -->
+
+    </div> <!-- 🔚 Fine Wrapper -->
+
+    <!-- 🦶 Footer DENTRO il contenitore-generale -->
+    <footer class="footer">
+      <div class="footer-content">
+        <img src="media/img/LOGO RMS.png" alt="Logo Footer" class="logo-footer" />
+        <p>
+          Developed by <strong>@YourName</strong> ·
+          <a href="https://www.romeztango.it" target="_blank">www.romeztango.it</a> ·
+          <a href="mailto:info@romeztango.it">info@romeztango.it</a>
+        </p>
+      </div>
+    </footer>
+
+  </div> <!-- 🔚 Fine contenitore-generale -->
+
+  <!-- 🧠 JavaScript -->
+  <script src="codice/js/sidebar.js"></script>
+  <script src="codice/js/main.js"></script>
+
+</body>
+</html>
