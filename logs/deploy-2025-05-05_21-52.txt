@@ -2,3 +2,13 @@
 [2025-05-05_21-52] 
  
 Commit: comit da casa son bat portartable  
+Push riuscito. 
+ 
+File modificati: 
+deployRomez.bat
+logs/deploy-2025-05-05_21-52.txt
+ 
+Eseguo il deploy su Netlify... 
+ 
+Sito online: https://r-member-system-app.netlify.app 
+----------------------------------------- 

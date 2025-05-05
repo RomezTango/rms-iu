@@ -1,0 +1,4 @@
+----------------------------------------- 
+[2025-05-05_23-13] 
+ 
+Commit: primo tentatico con quoteassociative  

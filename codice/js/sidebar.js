@@ -45,7 +45,7 @@ const menuData = [
     sottosezioni: [
       { nome: "📋 Anagrafica ASD", pagina: "anagrafica-asd" },
       { nome: "🖼️ Gestione Loghi", pagina: "gestione-loghi" },
-      { nome: "📝 Contributi Soci", pagina: "contributi-soci" },
+      { nome: "💶 Quote associative", pagina: "quote-associative" },
       { nome: "📊 Piano dei conti", pagina: "Piano-Dei_Conti" },
       { nome: "📝 Testi Personalizzati", pagina: "personalizza-testi" },
       { nome: "🎫 Inserimento Tessere", pagina: "inserimento-tessere" }
