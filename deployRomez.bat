@@ -1,5 +1,5 @@
 @echo off
-cd /d "H:\Il mio Drive\RMS\RMS_UI"
+cd /d "%~dp0"
 
 :: Data e ora formattati
 for /f "tokens=1-3 delims=/: " %%a in ("%date%") do set today=%%c-%%b-%%a
