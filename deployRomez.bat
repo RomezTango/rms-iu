@@ -20,6 +20,9 @@ echo Inserisci il messaggio per il commit:
 set /p msg=Messaggio: 
 echo Commit: %msg% >> "%logfile%"
 
+:: Rimuove eventuali file temporanei
+del /q *.tmp
+
 :: Git add, commit e push
 git add .
 git commit -m "%msg%"
@@ -54,3 +57,4 @@ echo.
 start https://r-member-system-app.netlify.app
 
 pause
+sCo

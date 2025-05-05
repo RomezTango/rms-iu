@@ -1,2 +1,24 @@
 # Local Netlify folder
 .netlify
+
+# 🔧 File temporanei e di output
+.deploy-output.tmp
+
+# 📦 Cartelle generate automaticamente (se un giorno usi un build tool)
+dist/
+build/
+
+# 📝 Log di deploy (solo se NON vuoi tenerli tutti su Git)
+logs/
+
+# ⚙️ Config locale di VS Code (non necessaria nel repo)
+.vscode/
+
+# 📁 Moduli Node (se usi npm o in futuro qualche tool tipo Vite, Parcel...)
+node_modules/
+
+# 💾 File di backup o temporanei
+*.log
+*.bak
+*.tmp
+*.swp

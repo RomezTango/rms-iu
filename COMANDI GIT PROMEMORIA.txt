@@ -1,0 +1,39 @@
+🔹 GIT – USO QUOTIDIANO ctrl+shift+b fa partire il batch
+Comando	Cosa fa
+git status	Ti dice cosa è cambiato, cosa è tracciato, cosa no
+git add .	Aggiunge tutti i file modificati al prossimo commit
+git commit -m "messaggio"	Salva una nuova versione locale con descrizione
+git push	Invia i commit su GitHub
+git log --pretty=format:"%h | %ad | %s" --date=iso     per avere la lista dei commit esistenti
+
+
+🔹 INFO & STORICO
+Comando	Cosa fa
+git log --oneline	Vedi la lista dei commit in breve
+git log --graph --oneline --all	Storico visuale a rami
+git diff	Mostra differenze nei file prima del commit
+git diff --name-only	Elenca solo i nomi dei file modificati
+
+🔹 CANCELLAZIONI & RESET
+Comando	Cosa fa
+git restore nomefile	Annulla le modifiche di un file non ancora committato
+git reset HEAD nomefile	Toglie un file già aggiunto da git add
+git reset --hard HEAD	Annulla tutte le modifiche non committate (⚠️ pericoloso)
+
+🔹 BRANCH (rami)
+Comando	Cosa fa
+git branch	Mostra i branch
+git checkout nome-ramo	Passa a un altro ramo
+git checkout -b nuovo-ramo	Crea un nuovo ramo e ci passa sopra
+
+🔹 REMOTE & REPO
+Comando	Cosa fa
+git remote -v	Mostra se il repo è collegato a GitHub
+git remote add origin URL	Collega il repo a GitHub (solo la prima volta)
+git push -u origin master	Push iniziale + tracking
+
+🔹 PULIZIE & IGNORI
+Comando	Cosa fa
+git rm --cached nomefile	Rimuove un file dal repo (ma lo lascia nel disco)
+git clean -fd	Rimuove file non tracciati (⚠️ attenzione!)
+echo nomefile > .gitignore	Aggiunge un file da ignorare (puoi anche modificarlo a mano)
