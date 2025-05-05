@@ -24,17 +24,13 @@ if errorlevel 1 (
     echo Push riuscito. >> deploy-log.txt
 )
 
-:: Deploy su Netlify e cattura output
+:: Deploy Netlify (senza prompt, dir forzata)
 echo Eseguo il deploy su Netlify...
-netlify deploy --prod --json > .deploy-output.tmp
-
-:: Estrai URL dal JSON (grezzo ma funziona)
-findstr /i "deploy_url" .deploy-output.tmp >> deploy-log.txt
-del .deploy-output.tmp
+netlify deploy --prod --dir="." >> deploy-log.txt
 
 :: Fine log
 echo ----------------------------------------- >> deploy-log.txt
 echo. >> deploy-log.txt
 
-echo ✅ Deploy completato! Log aggiornato in deploy-log.txt
+echo ✅ Tutto fatto! Controlla il file deploy-log.txt per i dettagli.
 pause
