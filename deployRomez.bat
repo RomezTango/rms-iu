@@ -68,6 +68,17 @@ echo ----------------------------------------- >> "%logfile%"
 echo Log salvato in %logfile%
 echo.
 
+:: 🎉 Happy beep finale
+echo.
+echo DEPLOY COMPLETATO! Tutto online e funzionante! 🎉
+echo 
+ping -n 2 127.0.0.1 >nul
+echo 
+
+:: 🌐 Apri sito in browser
+start https://r-member-system-app.netlify.app
+
+
 :: 🌐 Apri sito in browser
 start https://r-member-system-app.netlify.app
 
