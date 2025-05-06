@@ -68,18 +68,21 @@ echo ----------------------------------------- >> "%logfile%"
 echo Log salvato in %logfile%
 echo.
 
-:: 🎉 Happy beep finale
-echo.
-echo DEPLOY COMPLETATO! Tutto online e funzionante! 🎉
-echo 
-ping -n 2 127.0.0.1 >nul
-echo 
-
-:: 🌐 Apri sito in browser
-start https://r-member-system-app.netlify.app
-
+:: 🎶 Fanfarina soft post-deploy 🏀 "si perche non si può fare a meno di fare i deficenti, pure lavorando"
+call :fanfara_soft
 
 :: 🌐 Apri sito in browser
 start https://r-member-system-app.netlify.app
 
 pause
+goto :eof
+
+:fanfara_soft
+powershell -c "[console]::beep(440, 150)"
+powershell -c "[console]::beep(494, 150)"
+powershell -c "[console]::beep(523, 150)"
+powershell -c "[console]::beep(587, 200)"
+powershell -c "[console]::beep(659, 250)"
+timeout /t 1 >nul
+powershell -c "[console]::beep(698, 400)"
+goto :eof
