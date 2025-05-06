@@ -2,3 +2,15 @@
 [2025-05-06_23-31] 
  
 Commit: cambiato anch il .bat 
+✅ Push riuscito. 
+ 
+File modificati: 
+deployRomez.bat
+logs/deploy-2025-05-06_23-27.txt
+logs/deploy-2025-05-06_23-31.txt
+✅ index.html trovato. 
+ 
+Eseguo il deploy su Netlify... 
+ 
+Sito online: https://r-member-system-app.netlify.app 
+----------------------------------------- 
