@@ -1,0 +1,4 @@
+----------------------------------------- 
+[2025-05-06_21-52] 
+ 
+Commit: prova con main base per carivare il CONFIG  
