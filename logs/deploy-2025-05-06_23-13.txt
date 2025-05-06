@@ -2,3 +2,48 @@
 [2025-05-06_23-13] 
  
 Commit: prova con index2  
+✅ Push riuscito. 
+ 
+File modificati: 
+index2.html
+loader.json
+logs/deploy-2025-05-06_23-09.txt
+logs/deploy-2025-05-06_23-13.txt
+✅ index.html trovato. 
+ 
+Eseguo il deploy su Netlify... 
+[32mDeploy path: [39mG:\Il mio Drive\RMS\RMS_UI
+Deploying to main site URL...
+​
+Netlify Build                                                 
+────────────────────────────────────────────────────────────────
+​
+❯ Version
+  @netlify/build 32.1.0
+​
+❯ Flags
+  build: false
+  deployId: 681a7b9f8758f970e0bcb7e5
+  dir: .
+  open: false
+  prod: true
+  prodIfUnlocked: false
+  skipFunctionsCache: false
+​
+❯ Current directory
+  G:\Il mio Drive\RMS\RMS_UI
+​
+❯ Config file
+  No config file was defined: using default values.
+​
+❯ Context
+  dev
+
+[32mBuild logs: [39m        https://app.netlify.com/sites/r-member-system-app/deploys/681a7b9f8758f970e0bcb7e5
+[32mFunction logs: [39m     https://app.netlify.com/sites/r-member-system-app/logs/functions
+[32mEdge function Logs: [39mhttps://app.netlify.com/sites/r-member-system-app/logs/edge-functions
+[32mUnique deploy URL: [39m https://681a7b9f8758f970e0bcb7e5--r-member-system-app.netlify.app
+[32mWebsite URL: [39m       https://r-member-system-app.netlify.app
+ 
+Sito online: https://r-member-system-app.netlify.app 
+----------------------------------------- 
