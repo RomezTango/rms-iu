@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Config Loader</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    #contenuto-dinamico {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>🚀 Test Loader Config</h1>
+  <div id="contenuto-dinamico">⏳ Caricamento config in corso...</div>
+
+  <script>
+    let CONFIG = null;
+
+    async function caricaConfig() {
+      try {
+        const loaderUrl = localStorage.getItem("loader_url") || "/loader.json";
+
+        console.log("📦 Carico loader da:", loaderUrl);
+
+        const loaderRes = await fetch(loaderUrl);
+        if (!loaderRes.ok) throw new Error("❌ Loader non trovato");
+        const loader = await loaderRes.json();
+
+        const configRes = await fetch(loader.config_url);
+        if (!configRes.ok) throw new Error("❌ Config non trovato");
+        CONFIG = await configRes.json();
+
+        console.log("✅ CONFIG ricevuto:", CONFIG);
+        document.getElementById("contenuto-dinamico").innerHTML =
+          "<p style='color:green;'>✅ Config caricato con successo</p><pre>" + JSON.stringify(CONFIG, null, 2) + "</pre>";
+      } catch (err) {
+        console.error("❌ Errore caricamento config:", err);
+        document.getElementById("contenuto-dinamico").innerHTML =
+          "<p style='color:red;'>❌ Errore caricamento config.json</p>";
+      }
+    }
+
+    window.onload = () => {
+      caricaConfig();
+    };
+  </script>
+</body>
+</html>
