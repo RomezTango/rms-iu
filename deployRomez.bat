@@ -57,7 +57,7 @@ if exist index.html (
 :: 🚀 Deploy Netlify (call per sicurezza)
 echo. >> "%logfile%"
 echo Eseguo il deploy su Netlify... >> "%logfile%"
-call netlify deploy --prod --dir="." >> "%logfile%"
+call netlify deploy --prod --dir="." --functions="netlify/functions"
 
 :: 🌍 URL online
 echo. >> "%logfile%"
