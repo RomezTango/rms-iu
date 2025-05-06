@@ -2,3 +2,15 @@
 [2025-05-05_23-28] 
  
 Commit: come prima senza intoppi du netlify 
+✅ Push riuscito. 
+ 
+File modificati: 
+deployRomez.bat
+logs/deploy-2025-05-05_23-13.txt
+logs/deploy-2025-05-05_23-28.txt
+✅ index.html trovato. 
+ 
+Eseguo il deploy su Netlify... 
+ 
+Sito online: https://r-member-system-app.netlify.app 
+----------------------------------------- 
