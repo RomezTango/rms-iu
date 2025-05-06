@@ -1,29 +1,26 @@
-let CONFIG = null; // Config globale
+let CONFIG = null;
 
 async function caricaConfig() {
   try {
-    let backendUrl = localStorage.getItem("backend_url");
+    const loaderUrl = localStorage.getItem("loader_url") || "/loader.json";
 
-    const queryParams = new URLSearchParams(window.location.search);
-    if (queryParams.has("backend")) {
-      backendUrl = queryParams.get("backend");
-      localStorage.setItem("backend_url", backendUrl);
-    }
+    console.log("📦 Carico loader da:", loaderUrl);
 
-    if (!backendUrl) throw new Error("❌ Nessun backend specificato via ?backend=");
+    const loaderRes = await fetch(loaderUrl);
+    if (!loaderRes.ok) throw new Error("❌ Loader non trovato");
+    const loader = await loaderRes.json();
 
-    console.log("🌐 Chiamo backend:", backendUrl);
-
-    const configRes = await fetch(`${backendUrl}?azione=config`);
-    if (!configRes.ok) throw new Error("❌ Config non trovato dal backend");
-
+    const configRes = await fetch(loader.config_url);
+    if (!configRes.ok) throw new Error("❌ Config non trovato");
     CONFIG = await configRes.json();
 
     console.log("✅ CONFIG ricevuto:", CONFIG);
-    document.getElementById("contenuto-dinamico").innerHTML = "<p style='color:green;'>✅ Config caricato con successo</p>";
+    document.getElementById("contenuto-dinamico").innerHTML =
+      "<p style='color:green;'>✅ Config caricato con successo</p>";
   } catch (err) {
-    console.error("❌ Errore nel caricamento del config:", err);
-    document.getElementById("contenuto-dinamico").innerHTML = "<p style='color:red;'>❌ Errore nel caricamento del config</p>";
+    console.error("❌ Errore caricamento config:", err);
+    document.getElementById("contenuto-dinamico").innerHTML =
+      "<p style='color:red;'>❌ Errore caricamento config.json</p>";
   }
 }
 
