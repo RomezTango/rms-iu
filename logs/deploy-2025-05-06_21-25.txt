@@ -1,0 +1,4 @@
+----------------------------------------- 
+[2025-05-06_21-25] 
+ 
+Commit: MainJS con lettura di config in root RM config 

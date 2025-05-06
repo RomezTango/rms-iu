@@ -2,3 +2,47 @@
 [2025-05-06_ 7-33] 
  
 Commit: ulteriore prova con suono post sito  
+✅ Push riuscito. 
+ 
+File modificati: 
+deployRomez.bat
+logs/deploy-2025-05-06_ 7-20.txt
+logs/deploy-2025-05-06_ 7-33.txt
+✅ index.html trovato. 
+ 
+Eseguo il deploy su Netlify... 
+[32mDeploy path: [39mG:\Il mio Drive\RMS\RMS_UI
+Deploying to main site URL...
+​
+Netlify Build                                                 
+────────────────────────────────────────────────────────────────
+​
+❯ Version
+  @netlify/build 32.1.0
+​
+❯ Flags
+  build: false
+  deployId: 68199f4b49ad645899aa5849
+  dir: .
+  open: false
+  prod: true
+  prodIfUnlocked: false
+  skipFunctionsCache: false
+​
+❯ Current directory
+  G:\Il mio Drive\RMS\RMS_UI
+​
+❯ Config file
+  No config file was defined: using default values.
+​
+❯ Context
+  dev
+
+[32mBuild logs: [39m        https://app.netlify.com/sites/r-member-system-app/deploys/68199f4b49ad645899aa5849
+[32mFunction logs: [39m     https://app.netlify.com/sites/r-member-system-app/logs/functions
+[32mEdge function Logs: [39mhttps://app.netlify.com/sites/r-member-system-app/logs/edge-functions
+[32mUnique deploy URL: [39m https://68199f4b49ad645899aa5849--r-member-system-app.netlify.app
+[32mWebsite URL: [39m       https://r-member-system-app.netlify.app
+ 
+Sito online: https://r-member-system-app.netlify.app 
+----------------------------------------- 

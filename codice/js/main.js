@@ -13,7 +13,21 @@ let datiAssociazione = {}; // 🔥 Dati anagrafici mappati
 // ==============================
 async function caricaConfig() {
   try {
-    const loaderRes = await fetch("config/loader.json");
+    // 🔍 1. Recupera URL da localStorage o querystring
+    let loaderUrl = localStorage.getItem("loader_url");
+
+    // ✅ Se c'è una query string tipo ?loader=https://... salvalo
+    const queryParams = new URLSearchParams(window.location.search);
+    if (queryParams.has("loader")) {
+      loaderUrl = queryParams.get("loader");
+      localStorage.setItem("loader_url", loaderUrl);
+    }
+
+    if (!loaderUrl) throw new Error("Nessun URL loader specificato");
+
+    console.log("🌐 Loader URL:", loaderUrl);
+
+    const loaderRes = await fetch(loaderUrl);
     if (!loaderRes.ok) throw new Error("Loader non trovato");
     const loader = await loaderRes.json();
 
