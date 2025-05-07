@@ -23,7 +23,13 @@
 
     async function caricaConfig() {
       try {
-        const loaderUrl = localStorage.getItem("loader_url") || "/loader.json";
+        let loaderUrl = localStorage.getItem("loader_url");
+
+        // Validazione URL custom
+        if (!loaderUrl || !loaderUrl.startsWith("http") && !loaderUrl.startsWith("/")) {
+          console.warn("⚠️ URL personalizzato assente o non valido, uso loader.json locale.");
+          loaderUrl = "/loader.json";
+        }
 
         console.log("📦 Carico loader da:", loaderUrl);
 
@@ -31,6 +37,7 @@
         if (!loaderRes.ok) throw new Error("❌ Loader non trovato");
         const loader = await loaderRes.json();
 
+        console.log("🔗 URL config.json:", loader.config_url);
         const configRes = await fetch(loader.config_url);
         if (!configRes.ok) throw new Error("❌ Config non trovato");
         CONFIG = await configRes.json();
@@ -45,9 +52,7 @@
       }
     }
 
-    window.onload = () => {
-      caricaConfig();
-    };
+    window.onload = caricaConfig;
   </script>
 </body>
 </html>

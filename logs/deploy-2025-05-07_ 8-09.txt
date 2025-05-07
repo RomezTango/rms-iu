@@ -2,3 +2,28 @@
 [2025-05-07_ 8-09] 
  
 Commit: Con loader corretto 
+✅ Push riuscito. 
+ 
+File modificati: 
+codice/components/desktop.ini
+codice/css/desktop.ini
+codice/desktop.ini
+codice/js/desktop.ini
+codice/pages/desktop.ini
+desktop.ini
+loader.json
+logs/deploy-2025-05-06_23-37.txt
+logs/deploy-2025-05-07_ 8-09.txt
+logs/desktop.ini
+netlify/desktop.ini
+netlify/functions-internal/desktop.ini
+netlify/functions/desktop.ini
+netlify/v1/desktop.ini
+netlify/v1/functions/desktop.ini
+proxy-test/desktop.ini
+✅ index.html trovato. 
+ 
+Eseguo il deploy su Netlify... 
+ 
+Sito online: https://r-member-system-app.netlify.app 
+----------------------------------------- 
