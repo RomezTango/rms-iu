@@ -5,7 +5,7 @@ cd /d "%~dp0"
 :: 🚀 RMS_UI - Deploy Universale
 :: ✔️ Commit + Push + Deploy Netlify
 :: ✔️ Log dettagliato in /logs
-:: ✔️ A prova di percorso e cache
+:: ✔️ Include index.html + index2.html
 :: ================================
 
 :: 📆 Timestamp
@@ -47,14 +47,20 @@ echo. >> "%logfile%"
 echo File modificati: >> "%logfile%"
 git diff --name-only HEAD~1 HEAD >> "%logfile%"
 
-:: ✅ Verifica index.html presente
+:: ✅ Verifica index.html e index2.html presenti
 if exist index.html (
     echo ✅ index.html trovato. >> "%logfile%"
 ) else (
     echo ⚠️ ATTENZIONE: index.html NON trovato! >> "%logfile%"
 )
 
-:: 🚀 Deploy Netlify (call per sicurezza)
+if exist index2.html (
+    echo ✅ index2.html trovato. >> "%logfile%"
+) else (
+    echo ⚠️ ATTENZIONE: index2.html NON trovato! >> "%logfile%"
+)
+
+:: 🚀 Deploy Netlify
 echo. >> "%logfile%"
 echo Eseguo il deploy su Netlify... >> "%logfile%"
 call netlify deploy --prod --dir="." --functions="netlify/functions"
@@ -68,8 +74,8 @@ echo ----------------------------------------- >> "%logfile%"
 echo Log salvato in %logfile%
 echo.
 
-:: 🎶 Fanfarina soft post-deploy 🏀 "si perche non si può fare a meno di fare i deficenti, pure lavorando"
-call :fanfara_soft
+:: 🎶 Fanfarina di missione compiuta
+call :fanfarina_vittoria
 
 :: 🌐 Apri sito in browser
 start https://r-member-system-app.netlify.app
@@ -77,12 +83,11 @@ start https://r-member-system-app.netlify.app
 pause
 goto :eof
 
-:fanfara_soft
-powershell -c "[console]::beep(440, 150)"
-powershell -c "[console]::beep(494, 150)"
-powershell -c "[console]::beep(523, 150)"
-powershell -c "[console]::beep(587, 200)"
-powershell -c "[console]::beep(659, 250)"
+:fanfarina_vittoria
+powershell -c "[console]::beep(523,120)"
+powershell -c "[console]::beep(659,120)"
+powershell -c "[console]::beep(784,120)"
+powershell -c "[console]::beep(1046,180)"
+powershell -c "[console]::beep(784,200)"
 timeout /t 1 >nul
-powershell -c "[console]::beep(698, 400)"
 goto :eof
