@@ -2,3 +2,15 @@
 [2025-05-07_10-58] 
  
 Commit: ATTENZIONE CAMBIATO IL CORS-PROXY 
+✅ Push riuscito. 
+ 
+File modificati: 
+logs/deploy-2025-05-07_ 9-55.txt
+logs/deploy-2025-05-07_10-58.txt
+netlify/functions/cors-proxy.js
+✅ index.html trovato. 
+ 
+Eseguo il deploy su Netlify... 
+ 
+Sito online: https://r-member-system-app.netlify.app 
+----------------------------------------- 
