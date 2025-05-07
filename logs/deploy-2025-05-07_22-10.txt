@@ -1,3 +1,16 @@
 ----------------------------------------- 
 [2025-05-07_22-10] 
  
+✅ Push riuscito. 
+ 
+File modificati: 
+logs/deploy-2025-05-07_21-44.txt
+logs/deploy-2025-05-07_22-10.txt
+netlify.toml
+✅ index.html trovato. 
+✅ index2.html trovato. 
+ 
+Eseguo il deploy su Netlify... 
+ 
+Sito online: https://r-member-system-app.netlify.app 
+----------------------------------------- 
