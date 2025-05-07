@@ -2,3 +2,15 @@
 [2025-05-07_19-07] 
  
 Commit: SECONDA PROVA CON INDICAZIONE Netlify 
+✅ Push riuscito. 
+ 
+File modificati: 
+loader.json
+logs/deploy-2025-05-07_18-57.txt
+logs/deploy-2025-05-07_19-07.txt
+✅ index.html trovato. 
+ 
+Eseguo il deploy su Netlify... 
+ 
+Sito online: https://r-member-system-app.netlify.app 
+----------------------------------------- 

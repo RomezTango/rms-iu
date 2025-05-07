@@ -1,52 +1,8 @@
-let CONFIG = null;
-
-async function caricaConfig() {
-  try {
-    const loaderUrl = localStorage.getItem("loader_url") || "/loader.json";
-    console.log("📦 Carico loader da:", loaderUrl);
-
-    const loaderRes = await fetch(loaderUrl);
-    if (!loaderRes.ok) throw new Error("❌ Loader non trovato");
-    const loader = await loaderRes.json();
-
-    // ✅ RIMOZIONE DEL PROXY: uso diretto della config_url
-    const configUrl = loader.config_url.replace(
-      "https://r-member-system-app.netlify.app/.netlify/functions/cors-proxy?url=",
-      ""
-    );
-    console.log("🔗 Carico config da:", configUrl);
-
-    const configRes = await fetch(configUrl);
-    if (!configRes.ok) throw new Error("❌ Config non trovato");
-    CONFIG = await configRes.json();
-
-    console.log("✅ CONFIG ricevuto:", CONFIG);
-
-    // 🔁 Caricamento logo con Netlify Image CDN (senza proxy)
-    const logoId = CONFIG.ui_options?.logo_id;
-    const logoFileId = CONFIG.files?.[logoId];
-    if (logoFileId) {
-      const driveImageUrl = `https://drive.usercontent.google.com/uc?id=${logoFileId}&export=view`;
-      const imageCdnUrl = `/netlify/images?url=${encodeURIComponent(driveImageUrl)}`;
-      const logoImg = document.getElementById("logo-asd");
-      if (logoImg) {
-        logoImg.src = imageCdnUrl;
-        console.log("🖼️ Logo via Netlify Image CDN:", imageCdnUrl);
-      } else {
-        console.warn("⚠️ Elemento #logo-asd non trovato nel DOM.");
-      }
-    } else {
-      console.warn("⚠️ Logo ID non trovato nel config.");
-    }
-
-    document.getElementById("contenuto-dinamico").innerHTML =
-      "<p style='color:green;'>✅ Config caricato con successo</p><pre>" +
-      JSON.stringify(CONFIG, null, 2) + "</pre>";
-  } catch (err) {
-    console.error("❌ Errore caricamento config:", err);
-    document.getElementById("contenuto-dinamico").innerHTML =
-      "<p style='color:red;'>❌ Errore caricamento config.json</p>";
-  }
+{
+  "config_url": "https://r-member-system-app.netlify.app/.netlify/functions/cors-proxy?url=https://script.google.com/macros/s/AKfycbxllY42ZpBOOM3zoZqcwRfpoRH-nAYzWU9ZQ1J60ilXE_A1Miqu4hhXlDidfS_kO0c/exec?azione=config",
+  "generato_il": "06/05/2025 23:25:00",
+  "postazione": "RMS_UI Netlify",
+  "autore": "Andrea Romez Castagna"
 }
 
-window.onload = caricaConfig;
+

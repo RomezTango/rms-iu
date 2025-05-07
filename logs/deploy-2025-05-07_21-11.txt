@@ -1,0 +1,4 @@
+----------------------------------------- 
+[2025-05-07_21-11] 
+ 
+Commit: ritorno al loader vecchio ma con nuove modifiche netf 
