@@ -2,3 +2,16 @@
 [2025-05-07_21-36] 
  
 Commit: prova ricarica INDEX 2 prima fallita  
+✅ Push riuscito. 
+ 
+File modificati: 
+deployRomez.bat
+logs/deploy-2025-05-07_21-27.txt
+logs/deploy-2025-05-07_21-36.txt
+✅ index.html trovato. 
+✅ index2.html trovato. 
+ 
+Eseguo il deploy su Netlify... 
+ 
+Sito online: https://r-member-system-app.netlify.app 
+----------------------------------------- 
