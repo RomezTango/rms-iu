@@ -2,3 +2,15 @@
 [2025-05-07_15-24] 
  
 Commit: ritorno ad htmlindex2 di prova con logo  
+✅ Push riuscito. 
+ 
+File modificati: 
+index2.html
+logs/deploy-2025-05-07_15-17.txt
+logs/deploy-2025-05-07_15-24.txt
+✅ index.html trovato. 
+ 
+Eseguo il deploy su Netlify... 
+ 
+Sito online: https://r-member-system-app.netlify.app 
+----------------------------------------- 

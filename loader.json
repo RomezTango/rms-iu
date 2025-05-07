@@ -1,8 +1,40 @@
-{
-  "config_url": "https://r-member-system-app.netlify.app/.netlify/functions/cors-proxy?url=https://script.google.com/macros/s/AKfycbxllY42ZpBOOM3zoZqcwRfpoRH-nAYzWU9ZQ1J60ilXE_A1Miqu4hhXlDidfS_kO0c/exec?azione=config",
-  "generato_il": "06/05/2025 23:25:00",
-  "postazione": "RMS_UI Netlify",
-  "autore": "Andrea Romez Castagna"
+let CONFIG = null;
+
+async function caricaConfigDaLoader() {
+  try {
+    const loaderUrl = localStorage.getItem("loader_url") || "/loader.json";
+    console.log("📦 Carico loader da:", loaderUrl);
+
+    const loaderRes = await fetch(loaderUrl);
+    if (!loaderRes.ok) throw new Error("❌ Loader non trovato");
+    const loader = await loaderRes.json();
+
+    console.log("🔗 Config URL:", loader.config_url);
+    const configRes = await fetch(loader.config_url);
+    if (!configRes.ok) throw new Error("❌ Config non trovato");
+    CONFIG = await configRes.json();
+
+    console.log("✅ CONFIG ricevuto:", CONFIG);
+
+    // 🔁 Caricamento logo da Google Drive (senza proxy)
+    const logoId = CONFIG.ui_options?.logo_id;
+    const logoFileId = CONFIG.files?.[logoId];
+    if (logoFileId) {
+      const logoUrl = `https://drive.google.com/uc?export=view&id=${logoFileId}`;
+      const logoImg = document.getElementById("logo-asd");
+      if (logoImg) {
+        logoImg.src = logoUrl;
+        console.log("🖼️ Logo caricato:", logoUrl);
+      } else {
+        console.warn("⚠️ Elemento #logo-asd non trovato nel DOM.");
+      }
+    } else {
+      console.warn("⚠️ Logo ID non trovato nel config.");
+    }
+
+  } catch (err) {
+    console.error("❌ Errore caricamento config:", err);
+  }
 }
 
-
+window.onload = caricaConfigDaLoader;
