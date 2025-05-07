@@ -2,3 +2,15 @@
 [2025-05-06_23-37] 
  
 Commit: spostata la cartella netlify 
+✅ Push riuscito. 
+ 
+File modificati: 
+logs/deploy-2025-05-06_23-31.txt
+logs/deploy-2025-05-06_23-37.txt
+netlify/functions/cors-proxy.js
+✅ index.html trovato. 
+ 
+Eseguo il deploy su Netlify... 
+ 
+Sito online: https://r-member-system-app.netlify.app 
+----------------------------------------- 
