@@ -2,3 +2,14 @@
 [2025-05-07_ 9-44] 
  
 Commit: tentativo con logo piu piccolo  
+✅ Push riuscito. 
+ 
+File modificati: 
+logs/deploy-2025-05-07_ 9-33.txt
+logs/deploy-2025-05-07_ 9-44.txt
+✅ index.html trovato. 
+ 
+Eseguo il deploy su Netlify... 
+ 
+Sito online: https://r-member-system-app.netlify.app 
+----------------------------------------- 
