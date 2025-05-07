@@ -2,3 +2,15 @@
 [2025-05-07_ 9-55] 
  
 Commit: ulteriore prova logo con nuovo html  
+✅ Push riuscito. 
+ 
+File modificati: 
+index2.html
+logs/deploy-2025-05-07_ 9-44.txt
+logs/deploy-2025-05-07_ 9-55.txt
+✅ index.html trovato. 
+ 
+Eseguo il deploy su Netlify... 
+ 
+Sito online: https://r-member-system-app.netlify.app 
+----------------------------------------- 
