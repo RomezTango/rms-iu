@@ -1,0 +1,4 @@
+----------------------------------------- 
+[2025-05-07_21-17] 
+ 
+Commit: Test senza chiamata proxy per le immagini  

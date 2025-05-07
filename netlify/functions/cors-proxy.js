@@ -5,29 +5,40 @@ export async function handler(event) {
     return {
       statusCode: 400,
       body: JSON.stringify({ error: "Missing URL param" }),
-      headers: { 'Access-Control-Allow-Origin': '*' }
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json"
+      }
     };
   }
 
   try {
     const response = await fetch(targetUrl);
-    const contentType = response.headers.get("content-type");
-    const buffer = await response.arrayBuffer();
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
+    }
+
+    const contentType = response.headers.get("content-type") || "application/json";
+    const body = await response.text(); // Per JSON, non arrayBuffer
 
     return {
       statusCode: 200,
-      body: Buffer.from(buffer).toString("base64"),
-      isBase64Encoded: true,
+      body: body,
       headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': contentType || 'application/octet-stream'
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": contentType
       }
     };
+
   } catch (err) {
     return {
       statusCode: 500,
       body: JSON.stringify({ error: err.message }),
-      headers: { 'Access-Control-Allow-Origin': '*' }
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json"
+      }
     };
   }
 }
