@@ -2,3 +2,16 @@
 [2025-05-07_21-44] 
  
 Commit: ?? da proxy  Netlify Image CDN il ritorno  
+✅ Push riuscito. 
+ 
+File modificati: 
+index2.html
+logs/deploy-2025-05-07_21-36.txt
+logs/deploy-2025-05-07_21-44.txt
+✅ index.html trovato. 
+✅ index2.html trovato. 
+ 
+Eseguo il deploy su Netlify... 
+ 
+Sito online: https://r-member-system-app.netlify.app 
+----------------------------------------- 
