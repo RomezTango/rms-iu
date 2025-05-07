@@ -2,3 +2,15 @@
 [2025-05-07_ 8-14] 
  
 Commit: loader e index2 corretti  
+✅ Push riuscito. 
+ 
+File modificati: 
+index2.html
+logs/deploy-2025-05-07_ 8-09.txt
+logs/deploy-2025-05-07_ 8-14.txt
+✅ index.html trovato. 
+ 
+Eseguo il deploy su Netlify... 
+ 
+Sito online: https://r-member-system-app.netlify.app 
+----------------------------------------- 
