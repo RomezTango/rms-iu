@@ -2,3 +2,14 @@
 [2025-05-07_11-04] 
  
 Commit: secondo test con secondo aggiornamento PROXY  
+✅ Push riuscito. 
+ 
+File modificati: 
+logs/deploy-2025-05-07_10-58.txt
+logs/deploy-2025-05-07_11-04.txt
+✅ index.html trovato. 
+ 
+Eseguo il deploy su Netlify... 
+ 
+Sito online: https://r-member-system-app.netlify.app 
+----------------------------------------- 
