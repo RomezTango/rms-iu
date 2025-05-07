@@ -1,7 +1,7 @@
 ----------------------------------------- 
-[2025-05-07_11-14] 
+[2025-05-07_11-21] 
  
-Commit: Proxy e html cambiati per ricevere immagini  
+Commit:  
 ✅ Push riuscito. 
  
 File modificati: 

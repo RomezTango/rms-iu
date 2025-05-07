@@ -1,69 +1,85 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <title>Test Config Loader con Logo</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      padding: 20px;
-      background-color: #f0f0f0;
-    }
-    #logo-asd {
-      max-width: 200px;
-      margin-bottom: 20px;
-    }
-    #contenuto-dinamico {
-      margin-top: 20px;
-      font-weight: bold;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RomezTango RMS</title>
+
+  <!-- ✅ Stile principale -->
+  <link rel="stylesheet" href="codice/css/style.css" />
 </head>
 <body>
-  <h1>🚀 Test Loader Config</h1>
-  <img id="logo-asd" src="" alt="Logo Associazione" />
-  <div id="contenuto-dinamico">⏳ Caricamento config in corso...</div>
 
-  <script>
-    let CONFIG = null;
+  <!-- 🔲 Contenitore principale -->
+  <div class="contenitore-generale">
 
-    async function caricaConfig() {
-      try {
-        const loaderUrl = localStorage.getItem("loader_url") || "/loader.json";
-        console.log("📦 Carico loader da:", loaderUrl);
+    <!-- 🔳 Wrapper = Sidebar + Main -->
+    <div class="wrapper">
 
-        const loaderRes = await fetch(loaderUrl);
-        if (!loaderRes.ok) throw new Error("❌ Loader non trovato");
-        const loader = await loaderRes.json();
+      <!-- ⚠️ Sidebar dinamica (JS genera contenuto) -->
+      <div id="sidebar" class="sidebar-menu"></div>
 
-        const configRes = await fetch(loader.config_url);
-        if (!configRes.ok) throw new Error("❌ Config non trovato");
-        CONFIG = await configRes.json();
+      <!-- 🍔 Hamburger menu per mobile -->
+      <button id="hamburger" onclick="toggleSidebar()">
+        <span class="hamburger-lines"></span>
+      </button>
 
-        console.log("✅ CONFIG ricevuto:", CONFIG);
+      <!-- 🔶 Area principale -->
+      <div id="main">
 
-        // Costruzione dell'URL del logo tramite proxy
-        const logoId = CONFIG.ui_options?.logo_id;
-        const logoFileId = CONFIG.files?.[logoId];
-        if (logoFileId) {
-          const proxiedLogoUrl = `https://r-member-system-app.netlify.app/.netlify/functions/cors-proxy?url=https://drive.google.com/uc?export=download&id=${logoFileId}`;
-          document.getElementById("logo-asd").src = proxiedLogoUrl;
-          console.log("🖼️ Logo caricato via proxy:", proxiedLogoUrl);
-        } else {
-          console.warn("⚠️ Logo ID non trovato nel config.");
-        }
+        <!-- 🔝 Topbar (Logo + Dati Associazione + Data) -->
+        <div class="topbar">
 
-        document.getElementById("contenuto-dinamico").innerHTML =
-          "<p style='color:green;'>✅ Config caricato con successo</p><pre>" +
-          JSON.stringify(CONFIG, null, 2) + "</pre>";
-      } catch (err) {
-        console.error("❌ Errore caricamento config:", err);
-        document.getElementById("contenuto-dinamico").innerHTML =
-          "<p style='color:red;'>❌ Errore caricamento config.json</p>";
-      }
-    }
+          <!-- 🔗 Gruppo LOGO + DATI -->
+          <div class="logo-e-dati">
 
-    window.onload = caricaConfig;
-  </script>
+            <!-- 🖼️ Logo Associazione da Google Drive -->
+            <div class="logo">
+              <img src="https://drive.google.com/uc?export=view&id=1NtFmc5z5PGfHGKJ8lWJytBi01ZmdH8Ew" alt="Logo ASD" />
+            </div>
+
+            <!-- 📇 Dati Associazione -->
+            <div class="header-dati-associazione">
+              <div id="nome-associazione"></div>
+              <div id="indirizzo-associazione"></div>
+              <div id="piva-associazione"></div>
+            </div>
+
+          </div>
+
+          <!-- ⏰ Data corrente -->
+          <div id="datetime"></div>
+        </div>
+
+        <!-- 🔴 Linea rossa divisoria -->
+        <div class="topbar-divider"></div>
+
+        <!-- 📄 Contenuti dinamici -->
+        <div class="main-inner">
+          <div id="contenuto-dinamico"></div>
+        </div>
+
+      </div> <!-- 🔚 Fine Main -->
+
+    </div> <!-- 🔚 Fine Wrapper -->
+
+    <!-- 🦶 Footer DENTRO il contenitore-generale -->
+    <footer class="footer">
+      <div class="footer-content">
+        <img src="media/img/LOGO RMS.png" alt="Logo Footer" class="logo-footer" />
+        <p>
+          Developed by <strong>@YourName</strong> ·
+          <a href="https://www.romeztango.it" target="_blank">www.romeztango.it</a> ·
+          <a href="mailto:info@romeztango.it">info@romeztango.it</a>
+        </p>
+      </div>
+    </footer>
+
+  </div> <!-- 🔚 Fine contenitore-generale -->
+
+  <!-- 🧠 JavaScript -->
+  <script src="codice/js/sidebar.js"></script>
+  <script src="codice/js/main.js"></script>
+
 </body>
 </html>

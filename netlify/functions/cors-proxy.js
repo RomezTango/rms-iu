@@ -11,16 +11,16 @@ export async function handler(event) {
 
   try {
     const response = await fetch(targetUrl);
-    const contentType = response.headers.get('content-type') || 'application/octet-stream';
+    const contentType = response.headers.get("content-type");
     const buffer = await response.arrayBuffer();
 
     return {
       statusCode: 200,
-      body: Buffer.from(buffer).toString('base64'),
+      body: Buffer.from(buffer).toString("base64"),
       isBase64Encoded: true,
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Content-Type': contentType
+        'Content-Type': contentType || 'application/octet-stream'
       }
     };
   } catch (err) {
