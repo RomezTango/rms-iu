@@ -2,3 +2,18 @@
 [2025-05-07_18-57] 
  
 Commit: Variazione su cosiglio assistenza Netlify 
+✅ Push riuscito. 
+ 
+File modificati: 
+index2.html
+loader.json
+logs/deploy-2025-05-07_15-40.txt
+logs/deploy-2025-05-07_18-57.txt
+netlify.toml
+proxy-test/netlify.toml
+✅ index.html trovato. 
+ 
+Eseguo il deploy su Netlify... 
+ 
+Sito online: https://r-member-system-app.netlify.app 
+----------------------------------------- 

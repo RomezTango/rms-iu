@@ -1,6 +1,6 @@
 let CONFIG = null;
 
-async function caricaConfigDaLoader() {
+async function caricaConfig() {
   try {
     const loaderUrl = localStorage.getItem("loader_url") || "/loader.json";
     console.log("📦 Carico loader da:", loaderUrl);
@@ -9,7 +9,11 @@ async function caricaConfigDaLoader() {
     if (!loaderRes.ok) throw new Error("❌ Loader non trovato");
     const loader = await loaderRes.json();
 
-    const configUrl = loader.config_url;
+    // ✅ RIMOZIONE DEL PROXY: uso diretto della config_url
+    const configUrl = loader.config_url.replace(
+      "https://r-member-system-app.netlify.app/.netlify/functions/cors-proxy?url=",
+      ""
+    );
     console.log("🔗 Carico config da:", configUrl);
 
     const configRes = await fetch(configUrl);
@@ -18,7 +22,7 @@ async function caricaConfigDaLoader() {
 
     console.log("✅ CONFIG ricevuto:", CONFIG);
 
-    // 🔁 Caricamento logo da Google Drive via Netlify Image CDN
+    // 🔁 Caricamento logo con Netlify Image CDN (senza proxy)
     const logoId = CONFIG.ui_options?.logo_id;
     const logoFileId = CONFIG.files?.[logoId];
     if (logoFileId) {
@@ -35,9 +39,14 @@ async function caricaConfigDaLoader() {
       console.warn("⚠️ Logo ID non trovato nel config.");
     }
 
+    document.getElementById("contenuto-dinamico").innerHTML =
+      "<p style='color:green;'>✅ Config caricato con successo</p><pre>" +
+      JSON.stringify(CONFIG, null, 2) + "</pre>";
   } catch (err) {
     console.error("❌ Errore caricamento config:", err);
+    document.getElementById("contenuto-dinamico").innerHTML =
+      "<p style='color:red;'>❌ Errore caricamento config.json</p>";
   }
 }
 
-window.onload = caricaConfigDaLoader;
+window.onload = caricaConfig;
