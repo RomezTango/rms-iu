@@ -2,3 +2,15 @@
 [2025-05-07_21-17] 
  
 Commit: Test senza chiamata proxy per le immagini  
+✅ Push riuscito. 
+ 
+File modificati: 
+logs/deploy-2025-05-07_21-11.txt
+logs/deploy-2025-05-07_21-17.txt
+netlify/functions/cors-proxy.js
+✅ index.html trovato. 
+ 
+Eseguo il deploy su Netlify... 
+ 
+Sito online: https://r-member-system-app.netlify.app 
+----------------------------------------- 
