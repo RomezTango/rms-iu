@@ -2,3 +2,15 @@
 [2025-05-07_15-40] 
  
 Commit: tornati al passo precedente  
+✅ Push riuscito. 
+ 
+File modificati: 
+loader.json
+logs/deploy-2025-05-07_15-38.txt
+logs/deploy-2025-05-07_15-40.txt
+✅ index.html trovato. 
+ 
+Eseguo il deploy su Netlify... 
+ 
+Sito online: https://r-member-system-app.netlify.app 
+----------------------------------------- 

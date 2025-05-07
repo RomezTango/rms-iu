@@ -1,0 +1,10 @@
+[build]
+  functions = "netlify/functions"
+  
+[build]
+  functions = "netlify/functions"
+
+[images]
+  remote_images = [
+    "https://drive.usercontent.google.com/.*"
+  ]

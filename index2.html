@@ -42,13 +42,14 @@
 
         console.log("✅ CONFIG ricevuto:", CONFIG);
 
-        // Costruzione dell'URL del logo tramite proxy
+        // 🔁 Logo via Netlify Image CDN (NO proxy)
         const logoId = CONFIG.ui_options?.logo_id;
         const logoFileId = CONFIG.files?.[logoId];
         if (logoFileId) {
-          const proxiedLogoUrl = `https://r-member-system-app.netlify.app/.netlify/functions/cors-proxy?url=https://drive.google.com/uc?export=download&id=${logoFileId}`;
-          document.getElementById("logo-asd").src = proxiedLogoUrl;
-          console.log("🖼️ Logo caricato via proxy:", proxiedLogoUrl);
+          const driveImageUrl = `https://drive.usercontent.google.com/uc?id=${logoFileId}&export=view`;
+          const imageCdnUrl = `/netlify/images?url=${encodeURIComponent(driveImageUrl)}`;
+          document.getElementById("logo-asd").src = imageCdnUrl;
+          console.log("🖼️ Logo via Netlify Image CDN:", imageCdnUrl);
         } else {
           console.warn("⚠️ Logo ID non trovato nel config.");
         }
